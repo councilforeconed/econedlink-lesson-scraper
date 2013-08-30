@@ -4,7 +4,7 @@
   "description": "Scrapes some basic information from EconEdLink.",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha"
+    "test": "./node_modules/mocha/bin/mocha test/*"
   },
   "keywords": [
     "scraper"
@@ -16,6 +16,6 @@
   },
   "dependencies": {
     "mysql": "~2.0.0-alpha9",
-    "request": "~2.27.0",
+    "request": "~2.27.0"
   }
 }
