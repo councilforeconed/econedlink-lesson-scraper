@@ -5,7 +5,6 @@ var example = '?([{"results":{"title":["San Francisco Area Transit Strike | Econ
 
 describe('Response parser', function(){
   it('should return an object', function(){
-    console.log(example)
     assert.equal(Object.prototype.toString.call(parseResponse(example)), '[object Object]');
   });
 });
