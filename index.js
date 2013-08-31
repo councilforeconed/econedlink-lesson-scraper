@@ -1,3 +1,8 @@
+var request = require('request');
+var nano = require('nano')('http://localhost:5984');
+
+var db = nano.use('cee_portfolio');
+
 var ActiveLessonStream = require('./lib/streams/active-lesson-stream.js');
 var LessonInfoStream = require('./lib/streams/lesson-info-stream.js');
 var ApplyEconomicsStandards = require('./lib/streams/apply-econ-standards-stream.js');
@@ -10,5 +15,6 @@ ActiveLessonStream()
   .pipe(ApplyPersonalFinanceStandards())
   .pipe(ApplyPrefixToLessonIDStream())
   .on('data', function (data) {
+    db.insert(data);
     console.log(data);
   });
