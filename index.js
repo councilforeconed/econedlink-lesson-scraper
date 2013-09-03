@@ -15,6 +15,25 @@ ActiveLessonStream()
   .pipe(ApplyPersonalFinanceStandards())
   .pipe(ApplyPrefixToLessonIDStream())
   .on('data', function (data) {
-    db.insert(data);
-    console.log(data);
+    // Put whatever you want to do with the formatted data here.
+    // TODO: Abstract this out into a different function.
+    db.insert(data, data._id, function (err, body) {
+      if (err) {
+        db.get(data._id, function (err, body) {
+          if (!err) {
+            data._rev = body._rev;
+            db.insert(data, data._id, function (err, body) {
+              if (!err) {
+                console.log("Success:", body);
+              } else {
+                console.error(err);
+              }
+            });
+          } else {
+            console.error(err);
+          }
+        })
+      };
+      if (!err) console.log("Success:", data);
+    });
   });
