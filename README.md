@@ -25,6 +25,15 @@ These are the defaults for each of these.
 * Write more tests
   * The parsers and scapers have tests, but the streams do not. This is partly because I was burning out towards the end and partly because if the scrapers and parsers worked, the streams either mostly worked or threw a helpful fatal error.
 
+## Environment Variables
+
+You'll need some environment variables to get this bad boy up and running. They're MySQL credentials. I'll leave it as an exercise to the reader to figure out what they are.
+
+* `EEL_DB_ADDRESS`
+* `EEL_DB_USERNAME`
+* `EEL_DB_PASSWORD`
+* `EEL_DB_DATABASE`
+
 [EconEdLink]: http://econedlink.org/ "EconEdLink"
 [CouchDB]: http://couchdb.apache.org
 [Noodle.js]: http://noodlejs.com
