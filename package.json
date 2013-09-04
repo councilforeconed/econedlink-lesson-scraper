@@ -2,9 +2,11 @@
   "name": "econedlink-scraper",
   "version": "0.0.1",
   "description": "Scrapes some basic information from EconEdLink.",
+  "repository": "https://github.com/stevekinney/econedlink-lesson-scraper",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha test/*"
+    "test": "./node_modules/mocha/bin/mocha test/*",
+    "start": "node index.js"
   },
   "keywords": [
     "scraper"
@@ -18,6 +20,10 @@
     "mysql": "~2.0.0-alpha9",
     "request": "~2.27.0",
     "nano": "~4.1.1",
+<<<<<<< HEAD
     "lodash": "~1.3.1"
+=======
+    "noodlejs": "~0.2.0"
+>>>>>>> dba0b2fb7ecead1234938ac14245c271befb710a
   }
 }
