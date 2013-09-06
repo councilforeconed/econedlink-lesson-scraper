@@ -3,10 +3,7 @@
 var argv = require('optimist').argv;
 var scrape = require('./lib/scrape');
 
-if (argv.interactives) {
-  scrape("interactives");
-}
+if (argv.interactives) scrape("interactives");
+if (argv.lessons) scrape("lessons");
 
-if (argv.lessons) {
-  scrape("lessons");
-}
+module.exports = scrape;
